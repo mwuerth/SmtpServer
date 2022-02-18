@@ -84,8 +84,8 @@ namespace SmtpServer.Protocol
         /// <summary>
         /// Create Message for initial SMTP Greeting
         /// </summary>
-        /// <param name="serverOptions">The server options</param>
+        /// <param name="context">The SMTP session context</param>
         /// <returns>The SMTP greeting message</returns>
-        string CreateGreetingMessage(ISmtpServerOptions serverOptions);
+        string CreateGreetingMessage(ISessionContext context);
     }
 }

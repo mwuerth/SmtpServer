@@ -120,10 +120,10 @@ namespace SmtpServer.Protocol
         /// </summary>
         /// <param name="serverOptions"></param>
         /// <returns></returns>
-        public virtual string CreateGreetingMessage(ISmtpServerOptions serverOptions)
+        public virtual string CreateGreetingMessage(ISessionContext context)
         {
             var version = typeof(SmtpCommandFactory).GetTypeInfo().Assembly.GetName().Version;
-            return $"{serverOptions.ServerName} v{version} ESMTP ready";
+            return $"{context.ServerOptions.ServerName} v{version} ESMTP ready";
         }
     }
 }

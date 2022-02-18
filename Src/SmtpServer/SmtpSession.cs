@@ -174,7 +174,7 @@ namespace SmtpServer
         /// <returns>A task which performs the operation.</returns>
         ValueTask<FlushResult> OutputGreetingAsync(CancellationToken cancellationToken)
         {
-            var greeting = _commandFactory.CreateGreetingMessage(_context.ServerOptions);
+            var greeting = _commandFactory.CreateGreetingMessage(_context);
             _context.Pipe.Output.WriteLine($"220 " + greeting);
             
             return _context.Pipe.Output.FlushAsync(cancellationToken);
